@@ -1,0 +1,11 @@
+.env
+node_modules/
+public/ownerPortal.html
+public/manage-products.html
+public/manage-home.html
+public/manage-paintings.html
+public/manage-schedule.html
+public/productInvoiceDetails.html
+public/paintingInvoiceDetails.html
+public/newPaintingForm.html
+public/newProductForm.html
