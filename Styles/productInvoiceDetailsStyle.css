@@ -1,0 +1,94 @@
+
+main h1, h2 {
+    color: #333;
+    text-align: center;
+    align-items: center;
+}
+
+.invoice-details, .order-info, .customer-info, .product-info, .tracking-info {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.product-info img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.tracking-info input[type="text"], .tracking-info button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.tracking-info button {
+    background-color: #88c8bb;
+
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tracking-info button:hover {
+    background-color: #75aca1;
+}
+
+Party Details Specific Styles */
+
+/* General styling for all sections to maintain consistency */
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Light background for sections */
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling specific to the party info section */
+.party-info {
+    background-color: #e6f7ff; /* Light blue background to highlight party details */
+    border-left: 5px solid #007bff; /* Blue border for emphasis */
+    text-align: center;
+}
+.party-info img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    text-align: center;
+    margin: 10px 0;
+}
+/* Confirmation section styling */
+.confirmation-info {
+    text-align: center; /* Center alignment for button */
+    padding: 20px;
+    text-align: center;
+   /* Subtler yellow border */
+}
+
+.confirmation-info button {
+    padding: 10px 20px;
+    font-size: 16px;
+   
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.confirmation-info button:hover {
+   
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Enhancements for headers within sections to distinguish them */
+h2 {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dee2e6; /* Light gray line under headers for separation */
+}

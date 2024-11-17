@@ -1,0 +1,111 @@
+/* Section styling */
+#featuredProductsSection {
+    margin-top: 20px;
+}
+
+#featuredProductsSection h2 {
+    font-size: 28px;
+    color: #444;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 30px;
+}
+
+/* Featured items container */
+#featuredProductsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Individual featured item */
+.featured-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 60%;
+    max-width: 600px; /* Limit the width for a consistent vertical layout */
+}
+
+.featured-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.featured-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Select dropdown styling */
+.featured-item select {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.featured-item select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.close-button {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Available items list styling */
+#availableItemsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#availableItemsList li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#availableItemsList li:hover {
+    background-color: #f0f0f0;
+}

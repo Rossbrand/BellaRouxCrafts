@@ -1,0 +1,52 @@
+/* Item Details Styling */
+#itemDetails {
+    text-align: center;
+    margin: 40px 0;
+    background-color: transparent;
+}
+
+.item-image {
+    max-width: 45%;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: transparent; /* Ensure the background is transparent */
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.item-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+}
+
+.item-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+}
+
+.item-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.add-to-cart-btn {
+
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+

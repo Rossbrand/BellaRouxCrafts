@@ -1,0 +1,71 @@
+
+
+/* Form Elements */
+#updateForm {
+    margin-top: 20px;
+}
+
+#updateForm h2 {
+    font-size: 28px;
+    color: #444;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* Styling for the file input */
+input[type="file"] {
+    padding: 10px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* Image preview container */
+#imagePreviewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#imagePreviewContainer img {
+    max-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+

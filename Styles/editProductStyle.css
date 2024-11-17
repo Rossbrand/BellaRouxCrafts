@@ -1,0 +1,65 @@
+/* Centering header, main content, and footer elements */
+main h2, button, label {
+    text-align: center;
+}
+
+form {
+    width: 100%; /* Full width of its parent container */
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+form h2 {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #88c8bb;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #89f7ea;
+}
+
+#productPhotosPreview img {
+    width: 150px;              /* Fixed width for each image */
+    height: auto;              /* Maintain aspect ratio */
+    margin-right: 10px;        /* Right margin for spacing between images */
+    margin-bottom: 10px;       /* Bottom margin if they wrap to a new line */
+    border-radius: 4px;        /* Slightly rounded corners for aesthetics */
+}
+
+#productPhotosPreview {
+    display: flex;             /* Align children inline */
+    flex-wrap: wrap;           /* Allow multiple lines if necessary */
+    justify-content: flex-start; /* Align items to the start of the flex container */
+    align-items: center;       /* Align items vertically in the center */
+    margin-top: 10px;          /* Space above the container */
+    padding: 10px;             /* Padding inside the container */
+    border: 1px dashed #ccc;   /* Optional: shows the boundary of the container */
+    background-color: #f8f8f8; /* Optional: light background for the container */
+}
+

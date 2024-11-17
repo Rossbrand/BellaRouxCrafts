@@ -1,0 +1,75 @@
+
+
+/* Centering header, main content, and footer elements */
+main h1, #addProduct label {
+    text-align: center;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 4px solid #000;
+    padding: 10px 0;
+}
+
+
+#newProductForm {
+    width: 100%; /* Full width of its parent container */
+    padding: 20px;
+   
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+#newProductForm h2 {
+    text-align: center;
+}
+
+#newProductForm label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#newProductForm input[type="text"],
+#newProductForm input[type="number"],
+#newProductForm textarea,
+#newProductForm input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+#newProductForm button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #88c8bb;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#newProductForm button:hover {
+    background-color: #89f7ea;
+}
+#productPhotosPreview img {
+    width: 150px;              /* Fixed width for each image */
+    height: auto;              /* Maintain aspect ratio */
+    margin-right: 10px;        /* Right margin for spacing between images */
+    margin-bottom: 10px;       /* Bottom margin if they wrap to a new line */
+    border-radius: 4px;        /* Slightly rounded corners for aesthetics */
+}
+
+#productPhotosPreview {
+    display: flex;             /* Align children inline */
+    flex-wrap: wrap;           /* Allow multiple lines if necessary */
+    justify-content: flex-start; /* Align items to the start of the flex container */
+    align-items: center;       /* Align items vertically in the center */
+    margin-top: 10px;          /* Space above the container */
+    padding: 10px;             /* Padding inside the container */
+    border: 1px dashed #ccc;   /* Optional: shows the boundary of the container */
+    background-color: #f8f8f8; /* Optional: light background for the container */
+}

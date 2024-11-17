@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Home Display</title>
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/updateDisplayStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html">
+                <img src="Assets/imagesUI/logo.png" alt="logo">
+            </a>
+            <nav>
+                <a href="menu.html">
+                    <img src="Assets/imagesUI/menu.svg" alt="menu">
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="updateForm">
+                <h2>Update Home Display Image and News</h2>
+        
+                <!-- Form for Updating Image and News Box -->
+                <form id="updateDisplayForm">
+                    <!-- Upload New Display Image -->
+                    <label for="imageUpload">Upload New Display Image:</label>
+                    <input type="file" id="imageUpload" name="displayImage" accept="image/*" multiple>
+                    
+                    <!-- Container for image previews -->
+                    <div id="imagePreviewContainer" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <!-- Image previews will be inserted here -->
+                    </div>
+        
+                    <!-- Update News Box Content -->
+                    <label for="headline">Change Headline:</label>
+                    <input type="text" id="headline" name="headline" placeholder="Enter new headline">
+        
+                    <label for="newsContent">Change News Content:</label>
+                    <textarea id="newsContent" name="newsContent" rows="4" placeholder="Enter new news content"></textarea>
+        
+                    <!-- Submit Button -->
+                    <button type="submit">Submit Changes</button>
+                </form>
+            </section>  
+        </main>
+
+        <footer>
+            <p>&copy; 2024 BellaRoux Crafts. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Move the script tag here, inside the body but outside the container div -->
+    <script src="Scripts/updateDisplay.js"></script>
+</body>
+</html>

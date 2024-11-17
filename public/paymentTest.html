@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage products</title>
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/newproductStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Titillium+Web&display=swap" rel="stylesheet">
+    
+    <!-- Include the Square SDK -->
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html">
+                <img src="Assets/imagesUI/logo.png" alt="BellaRoux Crafts Logo">
+            </a>
+            <nav>
+                <a href="menu.html">
+                    <img src="Assets/imagesUI/menu.svg" alt="Menu">
+                </a>
+            </nav>
+        </header>
+        <main>
+            <form id="payment-form">
+                <div id="card-container"></div>
+                <button id="card-button" type="button">Pay</button>
+            </form>
+
+            <script>
+                const payments = Square.payments('sandbox-sq0idb-myZ5C9fgdCg_m__w1zU0-g', 'sandbox'); // Replace with your Sandbox Application ID
+
+                let card;  // Declare card as a global variable
+
+                // Initialize the card field when the page loads
+                async function initializeCard() {
+                    card = await payments.card();
+                    await card.attach('#card-container');
+                }
+
+                document.addEventListener('DOMContentLoaded', async () => {
+                    await initializeCard();
+                });
+
+                // Handle the payment
+                async function handlePayment() {
+                    if (!card) {
+                        alert('Card is not initialized yet. Please refresh the page.');
+                        return;
+                    }
+
+                    const tokenResult = await card.tokenize();
+
+                    if (tokenResult.status === 'OK') {
+                        const amountInCents = 1000;  // Example amount ($10.00 in cents)
+
+                        // Send the payment token to the server
+                        fetch('/api/payments', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                sourceId: tokenResult.token,  // Payment token (nonce)
+                                amount: Number(amountInCents),
+                            }),
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Payment successful!');
+                            } else {
+                                alert('Payment failed: ' + data.error);
+                            }
+                        });
+                    } else {
+                        alert('Error generating payment token');
+                    }
+                }
+
+                document.getElementById('card-button').addEventListener('click', handlePayment);
+            </script>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 BellaRoux Crafts. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Shipping Label</title>
+</head>
+<body>
+    <h1>Generate Shipping Label</h1>
+
+    <form id="label-form">
+        <label for="name">Recipient Name:</label>
+        <input type="text" id="name" required />
+        <label for="street1">Street Address:</label>
+        <input type="text" id="street1" required />
+        <label for="city">City:</label>
+        <input type="text" id="city" required />
+        <label for="state">State:</label>
+        <input type="text" id="state" required />
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" required />
+
+        <button type="button" id="generate-label">Generate Label</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('generate-label').addEventListener('click', async () => {
+            const shipTo = {
+                name: document.getElementById('name').value,
+                street1: document.getElementById('street1').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                postalCode: document.getElementById('postalCode').value,
+                country: 'US'
+            };
+
+            const shipFrom = {
+                name: "Jason Hodges",
+                street1: "2815 Exposition Blvd",
+                city: "Austin",
+                state: "TX",
+                postalCode: "78703",
+                country: "US"
+            };
+
+            const payload = {
+                carrierCode: "ups",  // You can switch between different carriers
+                serviceCode: "ups_ground",  // Adjust service code
+                packageCode: "package",
+                shipDate: new Date().toISOString().split('T')[0],  // Use today's date
+                weight: { value: 3, units: "ounces" },
+                dimensions: { units: "inches", length: 7, width: 5, height: 6 },
+                shipFrom: shipFrom,
+                shipTo: shipTo,
+                testLabel: true
+            };
+
+            try {
+                const response = await fetch('/api/shipstation/create-label', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    const downloadLink = `<a href="/api/download?file=${result.labelPath}" target="_blank">Download Label</a>`;
+                    document.getElementById('result').innerHTML = `<p>Label generated! ${downloadLink}</p>`;
+                } else {
+                    document.getElementById('result').innerHTML = `<p>Error: ${result.error}</p>`;
+                }
+            } catch (error) {
+                document.getElementById('result').innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

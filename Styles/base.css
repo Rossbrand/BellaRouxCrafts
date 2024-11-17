@@ -1,0 +1,113 @@
+/* Reset basic elements */
+body, h1, h2, p, label, input, textarea, button, form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Static background styling */
+body {
+    font-family: "Poiret One", sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: url('../Assets/imagesUI/paintbackGround.png');
+    background-size: cover;
+    background-position: center;
+    
+    background-attachment: fixed; /* Background stays fixed */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+/* Ensure full height */
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    margin: 0;
+    padding: 0;
+}
+/* Styling the container */
+.container {
+    width: 100%; /* Fill 90% of the screen width */
+    max-width: 800px; /* Maximum width to prevent it from getting too wide */
+    min-width: 300px; /* Minimum width to ensure usability on very small devices */
+    margin: 0 auto; /* Center the container */
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+}
+
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Keep the header at the top */
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    padding: 5px 0; /* Reduce the padding to make the header shorter */
+    border-bottom: 4px solid #000;
+}
+
+
+/* Logo size standardization across all pages */
+header img[alt="logo"], header img[alt="BellaRoux Crafts Logo"] {
+    height: 80px;  /* Adjusted to match other pages */
+    width: auto;
+}
+
+nav {
+    position: absolute;
+    right: 0;
+    
+}
+
+nav img {
+    height: 30px; /* Reduce the menu button size */
+    width: auto;
+}
+
+/* Main content styling */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px; /* Add some space between sections */
+   /* Add padding inside the main section */
+    overflow-y: auto; /* Allow scrolling if content exceeds available height */
+}   
+footer {
+    text-align: center;
+    position: fixed;
+
+    border-top: 1px solid #eaeaea;
+    padding: 10px 0;
+    margin-top: auto; /* Ensure footer sticks to the bottom */
+} 
+button {
+    background-color: #88c8bb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #69978e; /* Lighter blue on hover */
+}
+
+a {
+    text-decoration: none;
+  
+}

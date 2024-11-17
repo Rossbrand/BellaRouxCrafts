@@ -1,0 +1,76 @@
+/* Reset and basic styles */
+body, h1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the calendar */
+.schedule-section {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border-radius: 10px; /* Add rounded corners */
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 days a week */
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.day {
+    padding: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.day:hover {
+    background-color: #ddd;
+}
+
+/* Block day button styling */
+#toggleBlockMode {
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #88c8bb;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggleBlockMode:hover {
+    background-color: #75aca1;
+}
+
+/* Status classes for day states */
+.confirmed {
+    background-color: #4CAF50; /* Green for confirmed */
+}
+
+.unconfirmed {
+    background-color: #ffeb3b; /* Yellow for unconfirmed */
+}
+
+.blocked {
+    background-color: #f44336; /* Red for blocked days */
+}
+
+.available {
+    background-color: #e0e0e0; /* Grey for available */
+}
+
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(4, 1fr); /* Reduce columns for smaller devices */
+    }
+}

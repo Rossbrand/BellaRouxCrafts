@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout or Book a Paint Party on BellaRoux Crafts">
+    <title>Checkout | BellaRoux Crafts</title> 
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/checkoutStyle.css">
+    <link rel="stylesheet" href="Styles/itemlistStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="https://web.squarecdn.com/v1/square.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="index.html">
+                <img src="Assets/imagesUI/logo.png" alt="logo">
+            </a>
+            <nav>
+                <a href="menu.html">
+                    <img src="Assets/imagesUI/menu.svg" alt="menu">
+                </a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2 class="centered-title">Checkout</h2>
+
+            <!-- Customer Details (Unified Section) -->
+            <section id="customerDetailsSection">
+                <h3>Customer Information</h3>
+                <form id="customerDetails">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </form>
+            </section>
+
+            <!-- Paint Party Form (Optional) -->
+<section id="paintPartyForm">
+    <h3>Paint Party Information</h3>
+    <form id="paintPartyFormDetails">
+        <label for="partyAddress">Party Address</label>
+        <input type="text" id="partyAddress" name="partyAddress" required>
+
+        <label for="partyCity">Party City</label>
+        <input type="text" id="partyCity" name="partyCity" required>
+
+        <label for="partyState">Party State</label>
+        <input type="text" id="partyState" name="partyState" required>
+
+        <label for="partyZip">Party ZIP Code</label>
+        <input type="text" id="partyZip" name="partyZip" required>
+
+        <label for="partySetting">Party Setting</label>
+        <select id="partySetting" name="partySetting" required>
+            <option value="indoors">Indoors</option>
+            <option value="outdoors">Outdoors</option>
+        </select>
+
+        <label for="partyDate">Party Date</label>
+        <div class="date-time-container">
+            <input type="text" id="partyDateInput" name="partyDate" placeholder="Select a date" readonly>
+            <button id="openCalendarModal" type="button">Select Date</button>
+            <input type="time" id="partyTime" name="partyTime" required>
+        </div>
+
+        <label for="comments">Anything we should know?</label>
+        <textarea id="comments" name="comments" maxlength="250" placeholder="Add any comments here (max 250 characters)"></textarea>
+
+        <label>
+            <input type="radio" name="paymentOption" value="full" checked>
+            Pay Full Amount
+        </label>
+        <label>
+            <input type="radio" name="paymentOption" value="deposit">
+            Pay 50% Deposit
+        </label>
+    </form>
+</section>
+
+
+            <!-- Calendar Modal -->
+            <div id="calendarModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="calendar"></div> <!-- Calendar will be dynamically generated here -->
+                    <select id="monthPicker"></select>
+                    <select id="yearPicker"></select>
+                </div>
+            </div>
+
+            <!-- Shipping Information (Optional for Products) -->
+            <section id="checkoutForm" style="display: none;">
+                <h3>Shipping Information</h3>
+                <form id="shippingForm">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" required>
+
+                    <label for="zipCode">ZIP Code</label>
+                    <input type="text" id="zipCode" name="zipCode" required>
+
+                    <button type="button" id="getRatesBtn">Get Shipping Rates</button>
+                </form>
+
+                <div id="shippingRatesContainer" style="display: none;">
+                    <h4>Select a Shipping Option</h4>
+                    <div id="shippingOptions"></div>
+                </div>
+            </section>
+
+            <!-- Order Summary -->
+            <section id="order-summary">
+                <h3>Order Summary</h3>
+                <div id="order-items-container"></div>
+                <div class="financial-summary">
+                    <p>Subtotal:</p>
+                    <p id="subtotal">$0.00</p>
+                </div>
+                <div class="financial-summary">
+                    <p>Taxes (8%):</p>
+                    <p id="taxes">$0.00</p>
+                </div>
+                <div class="financial-summary">
+                    <p>Processing Fee (3%):</p>
+                    <p id="processingFee">$0.00</p>
+                </div>
+                <div class="financial-summary">
+                    <p>Shipping:</p>
+                    <p id="shipping">$0.00</p>
+                </div>
+                <div class="financial-summary total">
+                    <p>Total:</p>
+                    <p id="totalAmount">$0.00</p>
+                </div>
+            </section>
+
+            <!-- Payment Information Form -->
+            <section id="payment-info">
+                <h3>Payment Information</h3>
+                <form id="paymentForm">
+                    <div id="card-container"></div>
+                    <button type="button" id="placeOrderBtn">Place Order</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 BellaRoux Crafts. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="Scripts/checkout.js"></script>
+    <script src="Scripts/calendarModal.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View all items and paintings on BellaRoux Crafts">
+    <title>All Items | BellaRoux Crafts</title> 
+
+    <!-- Load base.css first -->
+    <link rel="stylesheet" href="Styles/base.css">
+    <!-- Then load itemlistStyle.css -->
+    <link rel="stylesheet" href="Styles/itemlistStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="index.html">
+                <img src="Assets/imagesUI/logo.png" alt="logo">
+            </a>
+            <nav>
+                <a href="menu.html">
+                    <img src="Assets/imagesUI/menu.svg" alt="menu">
+                </a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- View Picker Section -->
+            <section id="viewPickerSection">
+                <div class="title-picker-container">
+                    <h2 class="centered-title">All Products</h2>
+                    <select id="viewPicker">
+                        <option value="items">Items</option>
+                        <option value="Party Themes">Paintings</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Items Section -->
+            <section id="itemsSection">
+                <div class="item-list" id="itemsContainer">
+                    <!-- Dynamically loaded items will appear here -->
+                </div>
+            </section>
+
+            <!-- Paintings Section (Initially hidden) -->
+            <section id="paintingsSection" style="display: none;">
+          
+                <div class="painting-list" id="paintingsContainer">
+                    <!-- Dynamically loaded paintings will appear here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 BellaRoux Crafts. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Moved the script inside the body for better performance -->
+    <script src="Scripts/allItems.js"></script>
+</body>
+</html>

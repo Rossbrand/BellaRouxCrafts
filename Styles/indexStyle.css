@@ -1,0 +1,71 @@
+
+#Display img {
+    width: 100%; /* Make the image responsive to the container width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 500px; /* Maximum height to prevent it from being too tall */
+    display: block;
+    margin: 0 auto;
+    font-family: "Titillium Web", sans-serif;
+    border-bottom: 2px solid black;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+}
+
+
+/* News box styling */
+#newsBox {
+    text-align: center;
+}
+
+#newsBox h2, #newsBox h3, #newsBox p {
+    margin: 10px 0;
+}
+
+/* Services section styling */
+#services {
+    text-align: center;
+}
+
+#services h2, #services p {
+    margin: 10px 0;
+}
+
+
+
+/* Featured Paintings and Featured Items section styling */
+#featuredPaintings, #featuredItems {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#featuredPaintings h2, #featuredItems h2 {
+    margin: 10px 0;
+    font-family: "Titillium Web", sans-serif;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    scrollbar-width: thin; /* For Firefox */
+}
+
+.painting-item, .item {
+    margin: 0 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.painting-item img, .item img {
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#Display h2, p {
+    text-align: center; /* Center the text within the container */
+    margin: 0 auto; /* Center the container itself */
+   
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Featured Products</title>
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/updateFeaturedProducts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html">
+                <img src="Assets/imagesUI/logo.png" alt="logo">
+            </a>
+            <nav>
+                <a href="menu.html">
+                    <img src="Assets/imagesUI/menu.svg" alt="menu">
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="featuredProductsSection">
+                <h2>Update Featured Products</h2>
+                <div id="featuredProductsContainer">
+                    <!-- Featured products will be displayed here -->
+                </div>
+            </section>
+        </main>
+        <div id="itemSelectionModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h3>Select a New Item</h3>
+                <ul id="availableItemsList">
+                    <!-- Available items will be listed here -->
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 BellaRoux Crafts. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="Scripts/updateFeaturedProducts.js"></script>
+</body>
+</html>

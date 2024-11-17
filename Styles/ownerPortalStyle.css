@@ -1,0 +1,33 @@
+
+/* Styling the admin links section */
+#admin-links ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+#admin-links ul li {
+    border-top: 2px solid black; /* Black border at the top */
+    padding: 15px 0; /* Add padding between the items */
+    text-align: center; /* Center the text */
+}
+
+/* Remove the bottom border for the last item */
+#admin-links ul li:last-child {
+    border-bottom: none;
+}
+
+#admin-links ul li a {
+    text-decoration: none; /* Remove the underline from links */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Make the text color black */
+    display: block; /* Ensure the link takes the entire width of the list item */
+}
+
+/* Add hover effect for links */
+#admin-links ul li a:hover {
+    color: #333; /* Change color on hover */
+}
+
+/* Main content styling */
+
+

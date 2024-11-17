@@ -1,0 +1,39 @@
+/* Centered Menu Styling */
+.centered-menu {
+    display: flex;
+    justify-content: center; /* Center the menu horizontally */
+    align-items: center; /* Center the menu vertically within the container */
+    width: 100%; /* Ensure the menu takes up the full width of the container */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    gap: 20px; /* Spacing between links */
+    align-items: center; /* Ensure links are centered */
+}
+
+.nav-links li {
+    padding: 10px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.5rem; /* Increase size for visibility */
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #88c8bb; /* Hover color */
+}
+
+/* Mobile styles for smaller devices */
+@media (max-width: 768px) {
+    .nav-links a {
+        font-size: 1.2rem; /* Adjust font size for mobile */
+    }
+}
+

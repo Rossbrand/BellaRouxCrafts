@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/editProductStyle.css">
+    <link rel="stylesheet" href="Styles/itemlistStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html">
+                <img src="Assets/imagesUI/logo.png" alt="logo">
+            </a>
+            <nav>
+                <a href="menu.html">
+                    <img src="Assets/imagesUI/menu.svg" alt="menu">
+                </a>
+            </nav>
+        </header>
+        
+        <main>
+            <form id="editProductForm">
+                <h2>Edit Product</h2>
+                
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+                
+                <label for="productDescription">Description:</label>
+                <textarea id="productDescription" name="productDescription" required></textarea>
+                
+                <label for="productPrice">Price ($):</label>
+                <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+                
+                <label for="productPhotos">Upload New Photos (optional):</label>
+                <input type="file" id="productPhotos" name="productPhotos" accept="image/*" multiple>
+                <div id="productPhotosPreview"></div> <!-- Container for image previews -->
+
+                <button type="submit">Update Product</button>
+            </form>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 BellaRoux Crafts. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="Scripts/editProduct.js"></script>
+</body>
+</html>

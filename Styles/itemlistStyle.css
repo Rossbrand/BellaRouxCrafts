@@ -1,0 +1,98 @@
+/* Styling for View Picker */
+#viewPickerSection {
+    position: relative; /* Allows absolute positioning of view picker */
+    text-align: center;
+    padding: 0 20px; 
+}
+
+h2 {
+    text-align: center;
+    margin: auto; 
+}
+
+#viewPicker {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background-color: #88c8bb;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 0; /* Aligns the picker to the right of the container */
+    top: 50%; /* Vertically centers it relative to the title */
+    transform: translateY(-50%);
+}
+
+/* Centered Title for All Items/Paintings */
+.centered-title {
+    font-size: 2rem;
+    font-family: "Poiret One", sans-serif;
+    color: #333;
+}
+
+/* Styling for Items and Paintings List (VERTICAL) */
+.item-list, .painting-list {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Add some space between the items */
+    justify-content: flex-start;
+    align-items: center; 
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0; /* Add padding to prevent touching container edges */
+    text-decoration: none;
+}
+
+/* Corrected border color */
+.title-picker-container {
+    display: flex;
+    justify-content: space-between; /* Push title to the left and picker to the right */
+    align-items: center;
+    width: 100%;
+ 
+}
+
+/* Individual item/painting styling */
+.item, .painting-item {
+    width: 100%; /* Ensure it doesn't exceed container */
+    max-width: 200px; /* Limit max width */
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #ccc;
+  
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.item img, .painting-item img {
+    width: 100%; /* Ensure images take up the full width */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    display: block; /* Prevent inline spacing */
+}
+
+.item img:hover, .painting-item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Item/painting title */
+.item p, .painting-item p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+/* Remove text-decoration from links within items and paintings */
+.item a, .painting-item a {
+    text-decoration: none;
+    color: inherit; /* Ensure the text color inherits from parent */
+}
+
+/* Optionally, ensure <p> elements inside links have no decoration */
+.item a p, .painting-item a p {
+    text-decoration: none;
+}
+
